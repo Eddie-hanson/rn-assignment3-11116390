@@ -16,8 +16,9 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 20,
     borderRadius: 10,
-    borderColor: "#ddd",
-    height: 100,
+    borderColor: "#E8D1BA",
+    height: 128,
+
     borderWidth: 1,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   taskText: {
-    fontSize: 16,
+    fontSize: 20,
     color: "#333",
     fontWeight: "bold",
     marginVertical: 15,
