@@ -19,6 +19,16 @@ export default function App() {
     { id: "3", title: "Work on project" },
     { id: "4", title: "Cook dinner" },
     { id: "5", title: "Read a book" },
+    { id: "6", title: "Visit the military museum" },
+    { id: "7", title: "Work on a DIY project" },
+    { id: "8", title: "Attend a fitness bootcamp" },
+    { id: "9", title: "Hit the gym" },
+    { id: "10", title: "Attend a workshop" },
+    { id: "11", title: "Learn a backend framework" },
+    { id: "12", title: "Plan my next travel destination" },
+    { id: "13", title: "Weightlifting session at the gym" },
+    { id: "14", title: "Take a road trip to visit friends" },
+    { id: "15", title: "Debug and fix issues in my code" },
   ];
 
   const categories = [
