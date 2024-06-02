@@ -6,11 +6,20 @@ import {
   ScrollView,
   TextInput,
   FlatList,
+  Image,
   Button,
 } from "react-native";
 import TaskItem from "./components/Task";
 import CategoryItem from "./components/Category";
 import Icon from "react-native-vector-icons/FontAwesome";
+import Exercise from "./assets/Exercise.jpg";
+import Study from "./assets/Study.jpg";
+import Code from "./assets/Code.png";
+import Cook from "./assets/Cook.png";
+import Read from "./assets/Read.png";
+import Meditate from "./assets/Meditate.png";
+import Work from "./assets/Work.png";
+import Shop from "./assets/Shop.png";
 
 export default function App() {
   const tasks = [
@@ -32,35 +41,99 @@ export default function App() {
   ];
 
   const categories = [
-    { id: "1", title: "Exercise", taskCount: "12 Tasks" },
-    { id: "2", title: "Study", taskCount: "12 Tasks" },
-    { id: "3", title: "Code", taskCount: "12 Tasks" },
-    { id: "4", title: "Cook", taskCount: "12 Tasks" },
-    { id: "5", title: "Read", taskCount: "12 Tasks" },
-    { id: "6", title: "Meditate", taskCount: "12 Tasks" },
-    { id: "7", title: "Work", taskCount: "12 Tasks" },
-    { id: "8", title: "Shop", taskCount: "12 Tasks" },
+    {
+      id: "1",
+      title: "Exercise",
+      taskCount: "12 Tasks",
+      image: Exercise,
+    },
+    {
+      id: "2",
+      title: "Study",
+      taskCount: "12 Tasks",
+      image: Study,
+    },
+    {
+      id: "3",
+      title: "Code",
+      taskCount: "12 Tasks",
+      image: Code,
+    },
+    {
+      id: "4",
+      title: "Cook",
+      taskCount: "12 Tasks",
+      image: Cook,
+    },
+    {
+      id: "5",
+      title: "Read",
+      taskCount: "12 Tasks",
+      image: Read,
+    },
+    {
+      id: "6",
+      title: "Meditate",
+      taskCount: "12 Tasks",
+      image: Meditate,
+    },
+    {
+      id: "7",
+      title: "Work",
+      taskCount: "12 Tasks",
+      image: Work,
+    },
+    {
+      id: "8",
+      title: "Shop",
+      taskCount: "12 Tasks",
+      image: Shop,
+    },
   ];
 
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container}>
         <StatusBar style="auto" />
-        <View style={styles.header1_Views}>
-          <Text style={styles.header1}>Hello, Devs</Text>
-          <Text style={styles.tasks}>14 tasks today</Text>
+
+        <View>
+          <View style={styles.headerContainer}>
+            <Text style={styles.header1}>Hello, Devs</Text>
+
+            <Image
+              source={require("./assets/Profile.jpg")}
+              color="#f0ffff"
+              style={styles.profileIcon}
+            />
+          </View>
+
+          <View>
+            <Text style={styles.tasks}>14 tasks today</Text>
+          </View>
         </View>
 
         <View style={styles.searchContainer}>
           <Icon name="search" size={20} color="#000" style={styles.icon} />
           <TextInput style={styles.search} placeholder="Search " />
+
+          <View style={styles.filterIconContainer}>
+            <Image
+              source={require("./assets/Shuffle.png")}
+              color="#FFFFFF"
+              style={styles.filterIcon}
+            />
+          </View>
         </View>
 
         <Text style={styles.header2}>Categories</Text>
         <FlatList
           data={categories}
           renderItem={({ item }) => (
-            <CategoryItem title={item.title} taskCount={item.taskCount} />
+            <CategoryItem
+              title={item.title}
+              taskCount={item.taskCount}
+              image={item.image}
+            />
           )}
           keyExtractor={(item) => item.id}
           horizontal
@@ -79,21 +152,40 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#696969",
+    backgroundColor: "#E3D1BA",
     paddingTop: 50,
   },
-  header1_Views: {
+
+  headerContainer: {
     maxHeight: 52,
     maxWidth: 354,
     left: 20,
-    top: -25,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
+    borderRadius: 10,
+    marginBottom: 20,
   },
   header1: {
     fontSize: 24,
     fontWeight: "bold",
     textAlign: "left",
     marginVertical: 20,
-    marginTop: -10,
+    marginTop: -12,
+  },
+  tasks: {
+    marginTop: -48,
+    marginBottom: 20,
+    marginHorizontal: 30,
+  },
+  profileIcon: {
+    marginRight: 10,
+    position: "right",
+    width: 50,
+    height: 48,
+    marginTop: -7,
+    marginBottom: 15,
+    borderRadius: 12,
   },
   header2: {
     fontSize: 24,
@@ -120,10 +212,17 @@ const styles = StyleSheet.create({
     height: 48,
     width: 280,
   },
-  tasks: {
-    marginTop: -17,
-    marginBottom: 20,
-    marginHorizontal: 10,
+  filterIconContainer: {
+    backgroundColor: "#F0522F",
+    height: 48,
+    width: 50,
+    borderRadius: 14,
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: -75,
+  },
+  filterIcon: {
+    backgroundColor: "#F0522F",
   },
   icon: {
     marginRight: 10,
