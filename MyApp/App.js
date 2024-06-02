@@ -7,11 +7,10 @@ import {
   TextInput,
   FlatList,
   Image,
-  Button,
 } from "react-native";
 import TaskItem from "./components/Task";
+import CustomButton from "./components/Button";
 import CategoryItem from "./components/Category";
-import Icon from "react-native-vector-icons/FontAwesome";
 import Exercise from "./assets/Exercise.jpg";
 import Study from "./assets/Study.jpg";
 import Code from "./assets/Code.png";
@@ -50,43 +49,43 @@ export default function App() {
     {
       id: "2",
       title: "Study",
-      taskCount: "12 Tasks",
+      taskCount: "15 Tasks",
       image: Study,
     },
     {
       id: "3",
       title: "Code",
-      taskCount: "12 Tasks",
+      taskCount: "22 Tasks",
       image: Code,
     },
     {
       id: "4",
       title: "Cook",
-      taskCount: "12 Tasks",
+      taskCount: "8 Tasks",
       image: Cook,
     },
     {
       id: "5",
       title: "Read",
-      taskCount: "12 Tasks",
+      taskCount: "4 Tasks",
       image: Read,
     },
     {
       id: "6",
       title: "Meditate",
-      taskCount: "12 Tasks",
+      taskCount: "11 Tasks",
       image: Meditate,
     },
     {
       id: "7",
       title: "Work",
-      taskCount: "12 Tasks",
+      taskCount: "25 Tasks",
       image: Work,
     },
     {
       id: "8",
       title: "Shop",
-      taskCount: "12 Tasks",
+      taskCount: "50 Tasks",
       image: Shop,
     },
   ];
@@ -113,7 +112,11 @@ export default function App() {
         </View>
 
         <View style={styles.searchContainer}>
-          <Icon name="search" size={20} color="#000" style={styles.icon} />
+          <Image
+            source={require("./assets/Icon.jpg")}
+            color="#000"
+            style={styles.icon}
+          />
           <TextInput style={styles.search} placeholder="Search " />
 
           <View style={styles.filterIconContainer}>
@@ -143,7 +146,7 @@ export default function App() {
         {tasks.map((task) => (
           <TaskItem key={task.id} title={task.title} />
         ))}
-        <Button title="Add Task" onPress={() => {}} />
+        <CustomButton title="Add Task" onPress={() => {}} />
       </ScrollView>
     </View>
   );

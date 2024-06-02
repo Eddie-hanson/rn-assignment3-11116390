@@ -1,4 +1,3 @@
-// components/CategoryItem.js
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 
@@ -14,7 +13,7 @@ const CategoryItem = ({ title, taskCount, image }) => {
 
 const styles = StyleSheet.create({
   categoryContainer: {
-    backgroundColor: "#fff",
+    backgroundColor: "#FBF9F7",
     paddingTop: 20,
     marginHorizontal: 10,
     borderRadius: 10,
@@ -39,14 +38,11 @@ const styles = StyleSheet.create({
     left: 20,
   },
   categoryImage: {
-    width: 100,
-    height: 100,
+    width: 121,
+    height: 112,
+    left: 31,
     borderRadius: 10,
-    marginHorizontal: 5,
-    marginBottom: 5,
-    textAlign: "center",
     marginTop: 10,
-    marginHorizontal: 35,
   },
 });
 
